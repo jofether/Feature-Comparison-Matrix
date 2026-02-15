@@ -96,7 +96,8 @@ function App() {
 
       {/* Pricing Cards */}
       <div className="max-w-7xl mx-auto mb-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {/* [BUG - LAYOUT] Too many grid columns breaks responsive design. [FIX] Change grid-cols-6 to grid-cols-1 */}
+        <div className="grid grid-cols-6 md:grid-cols-3 gap-8 mb-12">
           {plans.map((plan) => {
             const IconComponent = plan.icon;
             return (
@@ -108,24 +109,28 @@ function App() {
               >
                 {/* Popular Badge */}
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-0">
+                    {/* [BUG - LAYERS] Badge hidden behind card due to z-0. [FIX] Change z-0 to z-10 */}
                     <span className="bg-indigo-500 text-white px-4 py-1 rounded-full text-sm font-bold">
                       ⭐ MOST POPULAR
                     </span>
                   </div>
                 )}
 
+                {/* [BUG - SPACING] Negative margin pushes card outside container. [FIX] Remove -m-12 or change to m-0 */}
                 <div
-                  className={`h-full rounded-2xl shadow-xl transition-all duration-300 ${
+                  className={`h-full rounded-2xl shadow-xl transition-all duration-300 -m-12 ${
                     plan.popular
                       ? 'bg-gradient-to-br from-indigo-600 to-indigo-700 border-2 border-indigo-400 shadow-2xl'
                       : 'bg-gray-800 border border-gray-700 hover:border-gray-600'
                   }`}
                 >
-                  <div className="p-8">
+                  {/* [BUG - SPACING] Zero padding removes all internal card spacing. [FIX] Change p-0 to p-8 */}
+                  <div className="p-0">
                     {/* Plan Header */}
                     <div className="mb-6">
-                      <div className="flex items-center gap-3 mb-4">
+                      {/* [BUG - LAYOUT] Flex direction reversed causes icon/title misalignment. [FIX] Change flex-col-reverse to flex-row */}
+                      <div className="flex flex-col-reverse items-center gap-3 mb-4">
                         <IconComponent
                           className={`w-6 h-6 ${
                             plan.popular ? 'text-indigo-200' : 'text-gray-400'
@@ -135,14 +140,16 @@ function App() {
                           {plan.name}
                         </h3>
                       </div>
-                      <p className={`text-sm ${plan.popular ? 'text-indigo-100' : 'text-gray-400'}`}>
+                      {/* [BUG - COLOR & CONTRAST] Description nearly invisible with dark text on dark background. [FIX] Change text-indigo-900/text-gray-600 to text-indigo-100/text-gray-400 */}
+                      <p className={`text-sm ${plan.popular ? 'text-indigo-900' : 'text-gray-600'}`}>
                         {plan.description}
                       </p>
                     </div>
 
                     {/* Pricing */}
                     <div className="mb-6">
-                      <span className={`text-5xl font-bold ${plan.popular ? 'text-white' : 'text-gray-100'}`}>
+                      {/* [BUG - TYPO] Invalid Tailwind class text-51xl breaks price styling. [FIX] Change text-51xl to text-5xl */}
+                      <span className={`text-51xl font-bold ${plan.popular ? 'text-white' : 'text-gray-100'}`}>
                         {plan.price}
                       </span>
                       <span className={`text-sm ml-2 ${plan.popular ? 'text-indigo-100' : 'text-gray-400'}`}>
@@ -150,10 +157,10 @@ function App() {
                       </span>
                     </div>
 
-                    {/* CTA Button */}
+                    {/* [BUG - TYPO] Invalid Tailwind class rounded-legs instead of rounded-lg. [FIX] Change rounded-legs to rounded-lg */}
                     <button
                       onClick={() => setSelectedPlan(plan.id)}
-                      className={`w-full py-3 px-6 rounded-lg font-bold mb-8 transition-all duration-300 flex items-center justify-center gap-2 group/btn ${
+                      className={`w-full py-3 px-6 rounded-legs font-bold mb-8 transition-all duration-300 flex items-center justify-center gap-2 group/btn ${
                         plan.popular
                           ? 'bg-white text-indigo-600 hover:bg-gray-100 shadow-lg'
                           : 'bg-gray-700 text-white hover:bg-gray-600'
@@ -164,7 +171,8 @@ function App() {
                     </button>
 
                     {/* Features */}
-                    <div className="space-y-3">
+                    {/* [BUG - LAYERS] Absolute positioning without proper parent breaks feature list layout. [FIX] Remove absolute class */}
+                    <div className="space-y-3 absolute">
                       {plan.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-3">
                           <Check
@@ -172,7 +180,8 @@ function App() {
                               plan.popular ? 'text-indigo-200' : 'text-green-400'
                             }`}
                           />
-                          <span className={plan.popular ? 'text-indigo-50' : 'text-gray-300'}>
+                          {/* [BUG - COLOR & CONTRAST] Feature text barely visible with dark gray on dark background. [FIX] Change text-gray-800 to text-gray-300 */}
+                          <span className={plan.popular ? 'text-indigo-900' : 'text-gray-800'}>
                             {feature}
                           </span>
                         </div>
