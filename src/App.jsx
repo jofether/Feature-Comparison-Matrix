@@ -171,7 +171,7 @@ function App() {
                               plan.popular ? 'text-indigo-200' : 'text-green-400'
                             }`}
                           />
-                          <span className={plan.popular ? 'text-indigo-900' : 'text-gray-800'"}>
+                          <span className={plan.popular ? 'text-indigo-900' : 'text-gray-800'}>
                             {feature}
                           </span>
                         </div>
