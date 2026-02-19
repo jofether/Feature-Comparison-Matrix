@@ -238,8 +238,7 @@ function App() {
                     )}
                   </td>
 
-                  {/* Pro Column (Highlighted Background) */}
-                  {/* FUTURE BUG: Change 'text-center' to 'text-left' to misalign checkmarks */}
+
                   <td className="px-6 py-4 text-center bg-indigo-500/10 border-x border-indigo-500/20 font-bold">
                     {feature.pro ? (
                       <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-indigo-500/30">
