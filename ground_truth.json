@@ -2,6 +2,7 @@
   "repository": "Feature Comparison Matrix",
   "bugs": [
     {
+      "comment": "Bug #1 - grid-cols",
       "bug_category": "Layout",
       "bug_type": "grid-cols",
       "file_modified": "src/App.jsx",
@@ -10,13 +11,14 @@
       "buggy_code": "<div className=\"grid grid-cols-6 md:grid-cols-3 gap-8 mb-12\">",
       "css_selector": ".grid",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 16,
+        "y": 232,
+        "width": 1248,
+        "height": 162
       }
     },
     {
+      "comment": "Bug #2 - z-index",
       "bug_category": "Layers",
       "bug_type": "z-index",
       "file_modified": "src/App.jsx",
@@ -25,13 +27,14 @@
       "buggy_code": "<div className=\"absolute -top-4 left-1/2 transform -translate-x-1/2 z-0\">",
       "css_selector": ".absolute",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 554,
+        "y": 195,
+        "width": 172,
+        "height": 25
       }
     },
     {
+      "comment": "Bug #3 - margin",
       "bug_category": "Spacing",
       "bug_type": "margin",
       "file_modified": "src/App.jsx",
@@ -40,13 +43,14 @@
       "buggy_code": "className={`h-full rounded-2xl shadow-xl transition-all duration-300 -m-12 ${",
       "css_selector": ".rounded-2xl",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": -32,
+        "y": 161,
+        "width": 1344,
+        "height": 186
       }
     },
     {
+      "comment": "Bug #4 - padding",
       "bug_category": "Spacing",
       "bug_type": "padding",
       "file_modified": "src/App.jsx",
@@ -55,13 +59,14 @@
       "buggy_code": "<div className=\"p-0\">",
       "css_selector": ".p-8",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": -31,
+        "y": 185,
+        "width": 489,
+        "height": 224
       }
     },
     {
+      "comment": "Bug #5 - flexbox",
       "bug_category": "Layout",
       "bug_type": "flexbox",
       "file_modified": "src/App.jsx",
@@ -70,13 +75,14 @@
       "buggy_code": "<div className=\"flex flex-col-reverse items-center gap-3 mb-4\">",
       "css_selector": ".flex",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": -31,
+        "y": 185,
+        "width": 489,
+        "height": 68
       }
     },
     {
+      "comment": "Bug #6 - text-indigo-100",
       "bug_category": "Color",
       "bug_type": "text-indigo-100",
       "file_modified": "src/App.jsx",
@@ -85,13 +91,14 @@
       "buggy_code": "<p className={`text-sm ${plan.popular ? 'text-indigo-900' : 'text-gray-600'}`}>",
       "css_selector": ".text-sm",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 384,
+        "y": 251,
+        "width": 512,
+        "height": 21
       }
     },
     {
+      "comment": "Bug #7 - text-51xl",
       "bug_category": "Typo",
       "bug_type": "text-51xl",
       "file_modified": "src/App.jsx",
@@ -100,13 +107,14 @@
       "buggy_code": "<span className={`text-51xl font-bold ${plan.popular ? 'text-white' : 'text-gray-100'}`}>",
       "css_selector": ".text-5xl",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": -31,
+        "y": 314,
+        "width": 28,
+        "height": 22
       }
     },
     {
+      "comment": "Bug #8 - rounded-legs",
       "bug_category": "Typo",
       "bug_type": "rounded-legs",
       "file_modified": "src/App.jsx",
@@ -115,13 +123,14 @@
       "buggy_code": "className={`w-full py-3 px-6 rounded-legs font-bold mb-8 transition-all duration-300 flex items-center justify-center gap-2 group/btn ${",
       "css_selector": ".rounded-lg",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": -31,
+        "y": 361,
+        "width": 489,
+        "height": 48
       }
     },
     {
+      "comment": "Bug #9 - position",
       "bug_category": "Layout",
       "bug_type": "position",
       "file_modified": "src/App.jsx",
@@ -130,13 +139,14 @@
       "buggy_code": "<div className=\"space-y-3 absolute\">",
       "css_selector": ".space-y-3",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": -31,
+        "y": 441,
+        "width": 175,
+        "height": 132
       }
     },
     {
+      "comment": "Bug #10 - text-indigo-50",
       "bug_category": "Color",
       "bug_type": "text-indigo-50",
       "file_modified": "src/App.jsx",
@@ -145,10 +155,10 @@
       "buggy_code": "<span className={plan.popular ? 'text-indigo-900' : 'text-gray-800'}>",
       "css_selector": ".text-indigo-50",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 384,
+        "y": 251,
+        "width": 512,
+        "height": 21
       }
     }
   ]
